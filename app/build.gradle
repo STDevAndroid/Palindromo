@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 34
+    namespace = 'com.fm.dev.exercises.palindromo'
     defaultConfig {
         applicationId "com.fm.dev.exercises.palindromo"
         minSdkVersion 15
