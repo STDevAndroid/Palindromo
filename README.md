@@ -4,7 +4,7 @@ Aplicación Android simple para detectar si una palabra es un palíndromo.
 
 📱 Proyecto hecho con:
 - Java
-- Android Studio 2.2.3 (actualizable)
+- Android Studio Electric Eel
 - Arquitectura básica MVC
 
 🔧 Funcionalidades:
@@ -13,3 +13,4 @@ Aplicación Android simple para detectar si una palabra es un palíndromo.
 - UI básica con `MainActivity`
 
 📦 Estructura del proyecto:
+Actualizado a Android Studio Electric Eel y librerías AndroidX.
