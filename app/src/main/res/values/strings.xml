@@ -2,4 +2,5 @@
     <string name="app_name">Palindromo</string>
     <string name="action_settings">Ajustes</string>
     <string name="banner_ad_unit_id">ca-app-pub-4994151405709283/3734697057</string>
+    <string name="help_text">La verificaci\u00f3n ignora espacios, acentos (menos la \u00f1) y elimina cualquier car\u00e1cter que no sea una letra. Los n\u00fameros y signos se descartan.</string>
 </resources>

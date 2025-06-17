@@ -9,16 +9,11 @@ import com.google.android.gms.ads.RequestConfiguration;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import android.text.Editable;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * Activity de Inicio
@@ -34,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Load an ad into the AdMob banner view.
-        AdView adView = (AdView) findViewById(R.id.adView);
+        AdView adView = findViewById(R.id.adView);
 
         // Configure the test device using the new RequestConfiguration API.
         RequestConfiguration configuration = new RequestConfiguration.Builder()
@@ -47,28 +42,19 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         adView.loadAd(adRequest);
 
-        buttonValidatePalindrome = (Button) findViewById(R.id.buttonValidatePalindrome);
-        buttonValidatePalindrome.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                editTextPalindrome = (EditText) findViewById(R.id.editTextPalindrome);
-                Editable editableEditTextPalindrome = editTextPalindrome.getText();
-                String strEditTextPalindrome = editableEditTextPalindrome.toString();
+        buttonValidatePalindrome = findViewById(R.id.buttonValidatePalindrome);
+        editTextPalindrome = findViewById(R.id.editTextPalindrome);
 
-                //String android_id = Settings.Secure.getString(PalindromoActivity.this.getContentResolver(), Settings.Secure.ANDROID_ID);
-                //String deviceId = md5(android_id).toUpperCase();
-                //Log.i("device id=",deviceId);
-
-                try{
-                    if(Validation.isPalindrome(strEditTextPalindrome)){
-                        Toast.makeText(MainActivity.this,"Es palindromo",Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this,"No es palindromo",Toast.LENGTH_SHORT).show();
-                    }
-                }catch(DefaultCheckedException dce){
-                    Toast.makeText(MainActivity.this,dce.getMessage(),Toast.LENGTH_SHORT).show();
+        buttonValidatePalindrome.setOnClickListener(v -> {
+            String input = editTextPalindrome.getText().toString();
+            try {
+                if (Validation.isPalindrome(input)) {
+                    Toast.makeText(MainActivity.this, "Es pal\u00edndromo", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "No es pal\u00edndromo", Toast.LENGTH_SHORT).show();
                 }
-
+            } catch (DefaultCheckedException e) {
+                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -93,25 +79,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private String md5(String s) {
-        try {
-            // Create MD5 Hash
-            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
-            digest.update(s.getBytes());
-            byte messageDigest[] = digest.digest();
-
-            // Create Hex String
-            StringBuffer hexString = new StringBuffer();
-            for (int i=0; i<messageDigest.length; i++)
-                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
-            return hexString.toString();
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 
 }
