@@ -4,7 +4,8 @@ Aplicación Android sencilla que verifica si una palabra escrita por el usuario 
 
 📱 Proyecto hecho con:
 - Java
-- Android Studio Electric Eel
+- Android Studio Iguana
+- Gradle 8.14.2 y Android Gradle Plugin 8.5.2
 - Arquitectura básica MVC
 
 🔧 Funcionalidades:
@@ -13,7 +14,16 @@ Aplicación Android sencilla que verifica si una palabra escrita por el usuario 
 - UI básica con `MainActivity`
 
 📦 Estructura del proyecto:
-Actualizado a Android Studio Electric Eel y librerías AndroidX.
+Actualizado a Android Studio Iguana y librerías AndroidX.
+
+## Algoritmo de validación
+
+1. Se eliminan los espacios en blanco.
+2. Se normalizan las vocales acentuadas manteniendo la letra ñ.
+3. Se descartan números y caracteres que no sean letras.
+4. Si el texto procesado tiene al menos dos letras, se invierte y se compara con el original.
+   - Si son iguales se considera palíndromo.
+   - De lo contrario no lo es y se informa al usuario.
 
 ## Despliegue en Google Play
 
