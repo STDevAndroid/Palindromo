@@ -30,4 +30,4 @@ Esta política puede actualizarse en el futuro. Cualquier cambio se publicará e
 
 ## Contacto
 
-Si tienes preguntas o comentarios, escríbenos a contacto@example.com.
+Si tienes preguntas o comentarios, escríbenos a cm850101@gmail.com
