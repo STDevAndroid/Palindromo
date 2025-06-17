@@ -20,7 +20,6 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonValidatePalindrome;
     private EditText editTextPalindrome;
 
     @Override
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         adView.loadAd(adRequest);
 
-        buttonValidatePalindrome = findViewById(R.id.buttonValidatePalindrome);
+        Button buttonValidatePalindrome = findViewById(R.id.buttonValidatePalindrome);
         editTextPalindrome = findViewById(R.id.editTextPalindrome);
 
         buttonValidatePalindrome.setOnClickListener(v -> {
