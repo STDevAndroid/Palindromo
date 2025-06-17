@@ -33,4 +33,5 @@ Para publicar la aplicación en la Play Store se requiere:
 2. Ejecutar `./gradlew assembleRelease` (o `bundleRelease`) para generar el archivo firmado.
 3. Crear un registro de aplicación en [Google Play Console](https://play.google.com/console) y subir el artefacto generado.
 4. Completar los datos de ficha, capturas de pantalla y políticas que solicita Google.
-5. Enviar la primera versión para revisión.
+5. Incluir la [política de privacidad](PRIVACY_POLICY.md) en la ficha de la aplicación.
+6. Enviar la primera versión para revisión.
