@@ -4,6 +4,8 @@ import com.fm.dev.exercises.palindromo.utils.DefaultCheckedException;
 import com.fm.dev.exercises.palindromo.utils.Validation;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Load an ad into the AdMob banner view.
         AdView adView = (AdView) findViewById(R.id.adView);
+
+        // Configure the test device using the new RequestConfiguration API.
+        RequestConfiguration configuration = new RequestConfiguration.Builder()
+                .setTestDeviceIds(java.util.Collections.singletonList("2C49329C3440F4E9E3F427831CC6CDC"))
+                .build();
+        MobileAds.setRequestConfiguration(configuration);
+
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("2C49329C3440F4E9E3F427831CC6CDC")  // An example device ID
-                .setRequestAgent("android_studio:ad_template").build();
+                .setRequestAgent("android_studio:ad_template")
+                .build();
         adView.loadAd(adRequest);
 
         buttonValidatePalindrome = (Button) findViewById(R.id.buttonValidatePalindrome);
