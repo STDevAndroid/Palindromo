@@ -5,7 +5,7 @@ android {
     namespace = 'com.fm.dev.exercises.palindromo'
     defaultConfig {
         applicationId "com.fm.dev.exercises.palindromo"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 34
         versionCode 3
         versionName "1.0.2"
